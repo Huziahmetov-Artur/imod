@@ -1,0 +1,61 @@
+.container {
+	width: 60%;
+	height: 85vh;
+}
+
+.footer {
+	background-color: rgb(114, 126, 114);
+	padding: 15px;
+	display: flex;
+	justify-self: center;
+	form {
+		display: flex;
+		width: 100%;
+		& mat-form-field {
+			flex: 1;
+		}
+	}
+}
+
+.body {
+	height: 100%;
+	background-color: rgb(200, 207, 200);
+	display: flex;
+	flex-flow: column;
+	overflow-y: auto;
+	& .viewer {
+		display: flex;
+		flex-direction: column;
+		flex: none;
+		& .message {
+			width: 60%;
+			display: flex;
+			flex-flow: row;
+			margin: .5rem;
+			& .content {
+				min-height: 2rem;
+				line-height: 2rem;
+				background-color: white;
+				display: flex;
+				flex: 1;
+			}
+			&.others {
+				& .content {
+					align-self: flex-end;
+					background-color: white;
+				}
+				flex-direction: row-reverse;
+				align-self: flex-end;
+			}
+			& .badge {
+				border-radius: 50%;
+				background-color: #888;
+				width: 3.5rem;
+				height: 3.5rem;
+				text-align: center;
+				line-height: 3.5rem;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}

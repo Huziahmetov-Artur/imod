@@ -1,0 +1,22 @@
+<div class="container">
+  <div *ngIf="!!sender" #viewer class="body">
+    <div class="viewer">
+      <div class="message" *ngFor="let msg of serverMessages" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
+        <div class="badge">SR</div>
+        <div class="content" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
+          <span>{{ msg.content }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!!sender" class="footer">
+    <form (submit)="send()">
+      <mat-form-field>
+        <input name="clientMessage" matInput placeholder="Write a message" type="text" [(ngModel)]="clientMessage">
+      </mat-form-field>
+      <button mat-fab type="submit">
+        <i class="material-icons">send</i>
+      </button>
+    </form>
+  </div>
+</div>
