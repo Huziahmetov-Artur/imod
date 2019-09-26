@@ -2,7 +2,7 @@
   <div *ngIf="!!sender" #viewer class="body">
     <div class="viewer">
       <div class="message" *ngFor="let msg of serverMessages" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
-        <div class="badge">SR</div>
+        <div class="badge">U</div>
         <div class="content" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
           <span>{{ msg.content }}</span>
         </div>
